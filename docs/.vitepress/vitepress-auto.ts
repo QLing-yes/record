@@ -1,33 +1,3 @@
-/** 文件路径转树对象
- * @param pathArray 文件路径路径
- * @param splitPath 路径分割符
- * @param splitExt 文件分隔符
- */
-function pathToTree(pathArray: string[], splitPath = "\\", splitExt = ".") {
-    const tree = {};
-    // 构建树结构的辅助函数
-    const buildTree = (path, node) => {
-        const segments = path.split(splitPath);
-        let currentLevel = node;
-        segments.forEach(segment => {
-            const dotI = segment.lastIndexOf(splitExt);
-            if (splitExt && dotI !== -1) {// 文件
-                let name = segment.slice(0, dotI);
-                // let ext = segment.slice(dotI + 1, segment.length);
-                currentLevel[name] = currentLevel[name] || segment;
-                currentLevel = currentLevel[name];
-            } else {// 目录
-                currentLevel[segment] = currentLevel[segment] || {};
-                currentLevel = currentLevel[segment];
-            }
-        })
-    };
-    // 遍历路径数组并构建树结构
-    pathArray.forEach(path => buildTree(path, tree));
-    console.log('-pathToTree()-',tree);
-    
-    return tree;
-}
 import path from 'path';
 import { globSync } from 'glob';
 
@@ -36,10 +6,10 @@ const root = process.cwd() + "/docs";
 function toTree(op) {
     const onDir = path.join(root, op.path);
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
-    console.log('-mdfiles-',mdfiles);
-    
-    const Tree = pathToTree(mdfiles)['docs']['notes'] as object;
-console.log('-Tree-',Tree);
+    console.log('-mdfiles-', mdfiles);
+
+    const Tree = pathToTree(mdfiles, path.sep)['docs']['notes'] as object;
+    console.log('-Tree-', Tree);
 
     let dirItems: any[] = [];
 
@@ -63,3 +33,34 @@ console.log('-Tree-',Tree);
 }
 
 export default toTree;
+
+/** 文件路径转树对象
+ * @param pathArray 文件路径路径
+ * @param splitPath 路径分割符
+ * @param splitExt 文件分隔符
+ */
+function pathToTree(pathArray: string[], splitPath = "\\", splitExt = ".") {
+    const tree = {};
+    // 构建树结构的辅助函数
+    const buildTree = (pathTxt, node) => {
+        const segments = pathTxt.split(splitPath);
+        let currentLevel = node;
+        segments.forEach(segment => {
+            const dotI = segment.lastIndexOf(splitExt);
+            if (splitExt && dotI !== -1) {// 文件
+                let name = segment.slice(0, dotI);
+                // let ext = segment.slice(dotI + 1, segment.length);
+                currentLevel[name] = currentLevel[name] || segment;
+                currentLevel = currentLevel[name];
+            } else {// 目录
+                currentLevel[segment] = currentLevel[segment] || {};
+                currentLevel = currentLevel[segment];
+            }
+        })
+    };
+    // 遍历路径数组并构建树结构
+    pathArray.forEach(path => buildTree(path, tree));
+    console.log('-pathToTree()-', tree);
+
+    return tree;
+}
