@@ -6,9 +6,6 @@ cache
 
 #user
 uni-pages.d.ts
-pnpm-lock.yaml
-yarn.lock
-package-lock.json
 
 # Editor directories and files
 .idea
