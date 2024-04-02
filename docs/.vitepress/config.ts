@@ -23,7 +23,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/QLing-yes' },
     ],
-    nav: [],
+    nav: [
+      { text: '介绍', link: "/index" },
+    ],
     sidebar: pressAuto({
       path: '/notes',
     })
