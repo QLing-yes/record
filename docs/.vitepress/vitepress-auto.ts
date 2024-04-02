@@ -24,6 +24,8 @@ function pathToTree(pathArray: string[], splitPath = "\\", splitExt = ".") {
     };
     // 遍历路径数组并构建树结构
     pathArray.forEach(path => buildTree(path, tree));
+    console.log('-pathToTree()-',tree);
+    
     return tree;
 }
 import path from 'path';
@@ -33,11 +35,7 @@ const root = process.cwd() + "/docs";
 
 function toTree(op) {
     const onDir = path.join(root, op.path);
-console.log('-onDir-', onDir);
-
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
-console.log('-mdfiles-', mdfiles);
-
     const Tree = pathToTree(mdfiles)['docs']['notes'] as object;
 console.log('-Tree-',Tree);
 
