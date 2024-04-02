@@ -26,7 +26,7 @@ function toTree(op) {
 
     dirItems = deep(op.path, Tree);
     console.log('--目录生成成功--');
-    
+
     return dirItems;
 }
 
@@ -42,8 +42,12 @@ function pathToTree(pathArray: string[], rep = '', splitPath = path.sep, splitEx
 
     const tree = {};
     // 构建树结构的辅助函数
-    const buildTree = (pathTxt, node) => {
-        if (rep) pathTxt = pathTxt.slice(rep.length * 2 - 1);
+    const buildTree = (pathTxt: string, node: object) => {
+        if (rep) {
+            let start = pathTxt.indexOf(rep) + rep.length;
+            let end = pathTxt.length;
+            pathTxt = pathTxt.substring(start, end);
+        }
         const segments = pathTxt.split(splitPath);
         let currentLevel = node;
         segments.forEach(segment => {
