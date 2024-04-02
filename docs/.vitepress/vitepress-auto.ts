@@ -10,7 +10,7 @@ function toTree(op) {
     
     console.log('-mdfiles-', mdfiles);
 
-    const Tree = pathToTree(mdfiles, "") as object;
+    const Tree = pathToTree(mdfiles, onDir + path.sep) as object;
 console.log('------OK------');
 
     let dirItems: any[] = [];
