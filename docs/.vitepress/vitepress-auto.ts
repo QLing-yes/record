@@ -33,10 +33,13 @@ const root = process.cwd() + "/docs";
 
 function toTree(op) {
     const onDir = path.join(root, op.path);
+console.log('-onDir-', onDir);
+
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
-    console.log('--',mdfiles);
-    
+console.log('-mdfiles-', mdfiles);
+
     const Tree = pathToTree(mdfiles)['docs']['notes'] as object;
+console.log('-Tree-',Tree);
 
     let dirItems: any[] = [];
 
