@@ -24,9 +24,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/QLing-yes' },
     ],
     nav: [],
-    sidebar: pressAuto({
-      path: '/notes',
-    })
+    sidebar: []
   },
   vite: {},
   vue: {
