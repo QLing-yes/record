@@ -4,20 +4,21 @@ import { globSync } from 'glob';
 const root = process.cwd() + `${path.sep}docs`;
 
 function toTree(op) {
+    op.path = op.path.replace(/\//g, path.sep);
     const onDir = path.join(root, op.path);
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
     console.log('-mdfiles-', mdfiles);
     const Tree = pathToTree(mdfiles, op.path + path.sep) as object;
     let dirItems: any[] = [];
 
-    const deep = (path: string, obj: object) => {
+    const deep = (pathTxt: string, obj: object) => {
         let arr: any[] = [];
         for (const item of Object.entries(obj)) {
             let data: Record<string, any> = { text: item[0] }
-            if (typeof item[1] == "string") data.link = `${path}/${item[0]}`
+            if (typeof item[1] == "string") data.link = `${pathTxt}${path.sep}${item[0]}`
             else {
                 data.collapsed = false;
-                data.items = deep(`${path}/${item[0]}`, item[1]);
+                data.items = deep(`${pathTxt}${path.sep}${item[0]}`, item[1]);
             }
             arr.push(data);
         }
