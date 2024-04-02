@@ -1,15 +1,17 @@
 import path from 'path';
 import { globSync } from 'glob';
 
-const root = process.cwd() + "/docs";
+const root = process.cwd() + `${path.sep}docs`;
 
 function toTree(op) {
     const onDir = path.join(root, op.path);
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
+    console.log('-onDir-',onDir);
+    
     console.log('-mdfiles-', mdfiles);
 
-    const Tree = pathToTree(mdfiles, path.sep)['docs']['notes'] as object;
-    console.log('-Tree-', Tree);
+    const Tree = pathToTree(mdfiles, "") as object;
+console.log('------OK------');
 
     let dirItems: any[] = [];
 
@@ -39,10 +41,13 @@ export default toTree;
  * @param splitPath 路径分割符
  * @param splitExt 文件分隔符
  */
-function pathToTree(pathArray: string[], splitPath = "\\", splitExt = ".") {
+function pathToTree(pathArray: string[], rep = '', splitPath = path.sep, splitExt = ".") {
+    console.log('rep--', rep);
+
     const tree = {};
     // 构建树结构的辅助函数
     const buildTree = (pathTxt, node) => {
+        if (rep) pathTxt = pathTxt.replace(new RegExp(`^${rep}`, 'g'), '');
         const segments = pathTxt.split(splitPath);
         let currentLevel = node;
         segments.forEach(segment => {
