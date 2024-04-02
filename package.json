@@ -1,0 +1,21 @@
+{
+  "name": "docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "glob": "^10.3.12",
+    "medium-zoom": "^1.1.0",
+    "vitepress": "^1.0.1",
+    "vitepress-plugin-comment-with-giscus": "^1.1.12"
+  },
+  "volta": {
+    "node": "20.12.0",
+    "pnpm": "8.15.5"
+  }
+}
