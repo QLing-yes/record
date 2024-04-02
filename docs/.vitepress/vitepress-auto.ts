@@ -26,15 +26,16 @@ function pathToTree(pathArray: string[], splitPath = "\\", splitExt = ".") {
     pathArray.forEach(path => buildTree(path, tree));
     return tree;
 }
-import fs from 'fs';
 import path from 'path';
-import { glob, globSync } from 'glob';
+import { globSync } from 'glob';
 
 const root = process.cwd() + "/docs";
 
 function toTree(op) {
     const onDir = path.join(root, op.path);
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
+    console.log('--',mdfiles);
+    
     const Tree = pathToTree(mdfiles)['docs']['notes'] as object;
 
     let dirItems: any[] = [];
