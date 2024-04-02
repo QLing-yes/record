@@ -9,7 +9,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'Record',
   description: 'VitePress',
-  base: '/',
+  base: '/record/',
   cleanUrls: true,
   ignoreDeadLinks: true,
   metaChunk: true,
