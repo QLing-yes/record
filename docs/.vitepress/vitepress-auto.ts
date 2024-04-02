@@ -6,7 +6,7 @@ const root = process.cwd() + `${path.sep}docs`;
 function toTree(op) {
     const onDir = path.join(root, op.path);
     const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
-    // console.log('-mdfiles-', mdfiles);
+    console.log('-mdfiles-', mdfiles);
     const Tree = pathToTree(mdfiles, op.path + path.sep) as object;
     let dirItems: any[] = [];
 
@@ -38,7 +38,7 @@ export default toTree;
  * @param splitExt 文件分隔符
  */
 function pathToTree(pathArray: string[], rep = '', splitPath = path.sep, splitExt = ".") {
-    // console.log('-rep-', rep);
+    console.log('-rep-', rep);
 
     const tree = {};
     // 构建树结构的辅助函数
@@ -61,7 +61,7 @@ function pathToTree(pathArray: string[], rep = '', splitPath = path.sep, splitEx
     };
     // 遍历路径数组并构建树结构
     pathArray.forEach(path => buildTree(path, tree));
-    // console.log('-pathToTree()-', tree);
+    console.log('-pathToTree()-', tree);
 
     return tree;
 }
