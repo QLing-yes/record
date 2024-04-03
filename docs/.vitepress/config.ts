@@ -1,8 +1,6 @@
 import { DefaultTheme, defineConfig } from 'vitepress';
 import pressAuto from "./vitepress-auto";
 
-let dirItems = []
-
 // https://vitepress.yiov.top/plugin.html
 // https://vitepress.dev/zh/reference/site-config
 export default defineConfig({
