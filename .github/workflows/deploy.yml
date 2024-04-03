@@ -13,7 +13,7 @@ on:
 
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -59,13 +59,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      # 部署到 GitHub pages
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ steps.deployment.outputs.page_url }}
-          commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
