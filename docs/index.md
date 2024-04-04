@@ -1,6 +1,6 @@
 ---
 layout: home
-
+comment: true
 hero:
   name: VitePress
   text: Vite & Vue powered static site generator.
