@@ -12,7 +12,8 @@
     "glob": "^10.3.12",
     "medium-zoom": "^1.1.0",
     "vitepress": "^1.0.2",
-    "vitepress-plugin-comment-with-giscus": "^1.1.12"
+    "vitepress-plugin-comment-with-giscus": "^1.1.12",
+    "vue": "^3.4.21"
   },
   "volta": {
     "node": "20.12.0",
