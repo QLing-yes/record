@@ -22,7 +22,8 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/QLing-yes' },
     ],
     nav: [
-      { text: '介绍', link: "/index" },
+      { text: '首页', link: "/index" },
+      { text: '留言', link: "/msg" },
     ],
     sidebar: pressAuto({
       path: '/notes',
