@@ -1,6 +1,6 @@
 ---
 layout: home
-comment: true
+comment: false
 hero:
   name: VitePress
   text: Vite & Vue powered static site generator.
@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /notes/web/✨元素相关
+      link: /TODO
     - theme: alt
       text: View on GitHub
       link: https://github.com/QLing-yes/record
