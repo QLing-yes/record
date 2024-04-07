@@ -111,7 +111,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [envParse()]
+    // plugins: [envParse()]
   },
   vue: {
     // @vitejs/plugin-vue 选项

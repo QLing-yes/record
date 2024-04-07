@@ -17,22 +17,22 @@ export default {
         app.component('Video', Video);
     },
     // https://vitepress.dev/zh/reference/default-theme-layout#custom-layout
-    // Layout: () => {
-    //     const props: Record<string, any> = {}
-    //     // 获取 frontmatter
-    //     const { frontmatter } = useData()
+    Layout: () => {
+        const props: Record<string, any> = {}
+        // 获取 frontmatter
+        const { frontmatter } = useData()
 
-    //     /* 添加自定义 class */
-    //     if (frontmatter.value?.layoutClass) {
-    //         props.class = frontmatter.value.layoutClass
-    //     }
+        /* 添加自定义 class */
+        if (frontmatter.value?.layoutClass) {
+            props.class = frontmatter.value.layoutClass
+        }
 
-    //     return h(DefaultTheme.Layout, props)
-    // },
+        return h(DefaultTheme.Layout, props)
+    },
     setup() {
         const { frontmatter } = useData();
         const route = useRoute();
-
+        console.log("meta", import.meta);
         // giscus配置
         giscusTalk({
             repo: 'QLing-yes/record', //仓库
