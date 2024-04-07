@@ -10,7 +10,9 @@
   "devDependencies": {
     "@types/node": "^20.11.30",
     "glob": "^10.3.12",
+    "less": "^4.2.0",
     "medium-zoom": "^1.1.0",
+    "vite-plugin-env-parse": "^1.0.10",
     "vitepress": "^1.0.2",
     "vitepress-plugin-comment-with-giscus": "^1.1.12",
     "vue": "^3.4.21"
