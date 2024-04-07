@@ -1,6 +1,6 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
-import { onMounted, watch, nextTick, h } from 'vue';
+import { onMounted, watch, nextTick, h, ref } from 'vue';
 import mediumZoom from 'medium-zoom';//图片预览
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';//支持giscus评论系统的UI
 import { useData, useRoute } from 'vitepress';
@@ -14,21 +14,21 @@ export default {
     enhanceApp({ app }) {
         // 注册全局组件
         // app.component('Layout' , Layout)
-        app.component('Video' , Video);
+        app.component('Video', Video);
     },
     // https://vitepress.dev/zh/reference/default-theme-layout#custom-layout
-    Layout: () => {
-        const props: Record<string, any> = {}
-        // 获取 frontmatter
-        const { frontmatter } = useData()
+    // Layout: () => {
+    //     const props: Record<string, any> = {}
+    //     // 获取 frontmatter
+    //     const { frontmatter } = useData()
 
-        /* 添加自定义 class */
-        if (frontmatter.value?.layoutClass) {
-            props.class = frontmatter.value.layoutClass
-        }
+    //     /* 添加自定义 class */
+    //     if (frontmatter.value?.layoutClass) {
+    //         props.class = frontmatter.value.layoutClass
+    //     }
 
-        return h(DefaultTheme.Layout, props)
-    },
+    //     return h(DefaultTheme.Layout, props)
+    // },
     setup() {
         const { frontmatter } = useData();
         const route = useRoute();
