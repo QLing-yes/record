@@ -3,29 +3,29 @@ layout: home
 
 hero:
   name: "Record"
-  text: "MD笔记"
-  tagline: "基于vitepress"
+  text: "MD Notes"
+  tagline: "based on vitepress"
   image:
     src: /vitepress.webp
     alt: "vitepress"
   actions:
     - theme: brand
-      text: 浏览
-      link: /msg
+      text: Browse
+      link: /nav/msg
     - theme: alt
       text: GitHub
       link: https://github.com/QLing-yes/record
 features:
   - icon: 📝
-    title: 个人笔记站点
-    details: 使用 VitePress 创建文档网站
+    title: Personal note site
+    details: Use Vitepress Create Document Site
   - icon:
       dark: /vitepress.webp
       light: /vitepress.webp
-    title: 由 Vite 和 Vue 驱动的静态站点生成器
-    details: 将 Markdown 变成优雅的文档，只需几分钟。
+    title: Vite & Vue Powered Static Site Generator
+    details: Markdown to Beautiful Docs in Minutes
     link: https://vitepress.dev
-    linkText: VitePress
+    linkText: vitepress
 ---
 
 <style>
@@ -36,5 +36,4 @@ features:
   --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
   --vp-home-hero-image-filter: blur(50px);
 }
-
 </style>

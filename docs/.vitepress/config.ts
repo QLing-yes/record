@@ -1,7 +1,6 @@
 import { DefaultTheme, defineConfig } from 'vitepress';
-import { envParse } from 'vite-plugin-env-parse' //自动生成 ImportMetaEnv
+// import { envParse } from 'vite-plugin-env-parse' //自动生成 ImportMetaEnv
 import pressAuto from "./vitepress-auto";
-
 // https://vitepress.yiov.top/plugin.html
 // https://vitepress.dev/zh/reference/site-config
 export default defineConfig({
@@ -20,6 +19,7 @@ export default defineConfig({
   // mpa: true,
   lastUpdated: true,
 
+
   //多语言
   locales: {
     root: {
@@ -28,7 +28,7 @@ export default defineConfig({
     },
     en: {
       // label: 'English',
-      label: '暂不支持',
+      label: '暂无其他语言版本',
       lang: 'en-US',// 可选，将作为 `lang` 属性添加到 `html` 标签中
       link: '/en/',
     },
@@ -47,6 +47,22 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png', //左上角logo
     // siteTitle: 'Hello World',//设置站点标题 会覆盖title
+    nav: [
+      { text: '🏡首页', link: "/index" },
+      {
+        text: '🗂分类',
+        items: [
+          { text: '📔 笔记', link: '/notes/web/✨元素相关' },
+        ]
+      },
+      { text: '📧留言', link: "/nav/msg" },
+    ],
+    // sidebar: pressAuto({ path: '/notes' }),
+    sidebar: {
+      "/": pressAuto({ path: '/notes' }),
+      // "/notes/": pressAuto({ path: '/notes' })
+    },
+
     //本地搜索
     search: {
       provider: 'local',
@@ -100,14 +116,8 @@ export default defineConfig({
     docFooter: {
       prev: '上一页',
       next: '下一页',
-    },
-    nav: [
-      { text: '首页', link: "/index" },
-      { text: '留言', link: "/nav/msg" },
-    ],
-    sidebar: pressAuto({
-      path: '/notes',
-    })
+    }
+
   },
 
   vite: {

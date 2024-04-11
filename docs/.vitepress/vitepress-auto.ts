@@ -1,12 +1,21 @@
 import path from 'path';
 import { globSync } from 'glob';
+import fs from 'fs'
 
 const root = process.cwd() + `${path.sep}docs`;
+// console.log(fs.readdirSync(`${root}/notes`));
+type ToTreeOP = {
+    /** 文件夹路径 */
+    path: string,
+    /** 排除文件或文件夹路径 */
+    ignore?: string[],
+}
+export function toTree(op: ToTreeOP) {
 
-function toTree(op) {
     op.path = op.path.replace(/\//g, path.sep);
+
     const onDir = path.join(root, op.path);
-    const mdfiles = globSync([onDir + '/**/*.md'], { ignore: 'node_modules/**' })
+    const mdfiles = globSync([onDir + '/**/*.md'], { ignore: ['node_modules/**', ...(op.ignore || [])] })
     // console.log('-mdfiles-', mdfiles);
     const Tree = pathToTree(mdfiles, op.path + path.sep) as object;
     let dirItems: any[] = [];
@@ -26,6 +35,8 @@ function toTree(op) {
     }
 
     dirItems = deep(op.path, Tree);
+    // console.log(dirItems);
+
     console.log('--目录生成成功--');
 
     return dirItems;
