@@ -13,7 +13,7 @@ export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
         // 注册全局组件
-        // app.component('Layout' , Layout)
+        app.component('Layout' , Layout)
         app.component('Video', Video);
     },
     // https://vitepress.dev/zh/reference/default-theme-layout#custom-layout

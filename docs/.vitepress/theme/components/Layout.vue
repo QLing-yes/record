@@ -7,15 +7,12 @@ import { nextTick, provide } from 'vue'
 
 const { isDark } = useData()
 
-const enableTransitions = () =>
-    'startViewTransition' in document &&
-    window.matchMedia('(prefers-reduced-motion: no-preference)').matches
-
 provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
-    if (!enableTransitions()) {
+    const switchTheme = async () => {
         isDark.value = !isDark.value
-        return
+        await nextTick();
     }
+    if (!document.startViewTransition) return switchTheme();
 
     const clipPath = [
         `circle(0px at ${x}px ${y}px)`,
@@ -25,10 +22,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
         )}px at ${x}px ${y}px)`
     ]
 
-    await document.startViewTransition(async () => {
-        isDark.value = !isDark.value
-        await nextTick()
-    }).ready
+    await document.startViewTransition(switchTheme).ready;
 
     document.documentElement.animate(
         { clipPath: isDark.value ? clipPath.reverse() : clipPath },
