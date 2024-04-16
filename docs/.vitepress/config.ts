@@ -9,7 +9,7 @@ export default defineConfig({
   description: 'VitePress',
   // #region fav
   head: [
-    ['link', { rel: 'icon', href: '/logo.svg' }],
+    ['link', { rel: 'icon', href: './logo.svg' }],
   ],
   // base: '/',
   base: '/record/',
