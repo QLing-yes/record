@@ -8,6 +8,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
+    "@types/dom-view-transitions": "^1.0.4",
     "@types/node": "^20.11.30",
     "glob": "^10.3.12",
     "less": "^4.2.0",

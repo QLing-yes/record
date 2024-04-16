@@ -1,6 +1,5 @@
-<!-- .vitepress/theme/Layout.vue -->
-
 <script setup lang="ts">
+import '../style/Layout.css'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
@@ -12,6 +11,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
         isDark.value = !isDark.value
         await nextTick();
     }
+
     if (!document.startViewTransition) return switchTheme();
 
     const clipPath = [

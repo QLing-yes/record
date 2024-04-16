@@ -5,11 +5,11 @@ import pressAuto from "./vitepress-auto";
 // https://vitepress.dev/zh/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'Record',
+  title: 'Blog',
   description: 'VitePress',
   // #region fav
   head: [
-    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['link', { rel: 'icon', href: '/logo.svg' }],
   ],
   // base: '/',
   base: '/record/',
@@ -45,17 +45,17 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.png', //左上角logo
+    logo: '/logo.svg', //左上角logo
     // siteTitle: 'Hello World',//设置站点标题 会覆盖title
     nav: [
-      { text: '🏡首页', link: "/index" },
+      { text: '🏡 首页', link: "/index" },
       {
-        text: '🗂分类',
+        text: '🗂 分类',
         items: [
           { text: '📔 笔记', link: '/notes/web/✨元素相关' },
         ]
       },
-      { text: '📧留言', link: "/nav/msg" },
+      { text: '💬 留言', link: "/nav/msg" },
     ],
     // sidebar: pressAuto({ path: '/notes' }),
     sidebar: {

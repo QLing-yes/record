@@ -3,11 +3,11 @@ layout: home
 
 hero:
   name: "Record"
-  text: "MD笔记"
-  tagline: "基于vitepress"
+  text: "MD & Blog"
+  tagline: "基于 itepress"
   image:
-    src: /vitepress.webp
-    alt: "vitepress"
+    src: /logo.svg
+    alt: "Blog"
   actions:
     - theme: brand
       text: 浏览
@@ -16,7 +16,9 @@ hero:
       text: GitHub
       link: https://github.com/QLing-yes/record
 features:
-  - icon: 📝
+  - icon: 
+      dark: /logo.svg
+      light: /logo.svg
     title: 个人笔记站点
     details: 使用 vitepress 创建文档网站
   - icon:
@@ -31,9 +33,13 @@ features:
 <style>
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
 
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  /* --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff); */
+  /* --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%); */
+
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #5998D8, #9AD665);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #5998D8 50%, #9AD665 50%);
+
   --vp-home-hero-image-filter: blur(50px);
 }
 </style>
