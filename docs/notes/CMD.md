@@ -112,7 +112,7 @@ css/*.css       //忽略css目录下的.css文件
 
 - [官方](https://registry.npmjs.org/)
 - [阿里镜像站](https://developer.aliyun.com/mirror/?spm=a2c6h.13651102.0.0.5bbc1b11Doi1G6&serviceType=mirror&tag=%E8%AF%AD%E8%A8%80)
-  npm set registry http://registry.npmmirror.com
+  npm config set registry https://registry.npmmirror.com
 
 
 ## package.json
