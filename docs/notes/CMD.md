@@ -103,6 +103,8 @@ css/*.css       //忽略css目录下的.css文件
 - 初始化 `init`
 - 更新包 `update`
 - 安装 `<install | i>`
+  - `--force` 无视冲突，覆盖
+  - `--legacy-peer-deps` 忽略依赖冲突，不会覆盖
 - 删除 `r`
 - 模块版本 `version`
 - 网络搜索包`search`
