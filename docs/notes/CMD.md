@@ -109,12 +109,14 @@ css/*.css       //忽略css目录下的.css文件
 - 模块版本 `version`
 - 网络搜索包`search`
 - 镜像切换 `config set registry=`地址
+- 查看镜像 npm config get registry
 
 > 镜像
 
 - [官方](https://registry.npmjs.org/)
 - [阿里镜像站](https://developer.aliyun.com/mirror/?spm=a2c6h.13651102.0.0.5bbc1b11Doi1G6&serviceType=mirror&tag=%E8%AF%AD%E8%A8%80)
-  npm config set registry https://registry.npmmirror.com
+npm config set registry https://registry.npmmirror.com
+npm config set registry https://registry.npmjs.org
 
 
 ## package.json
