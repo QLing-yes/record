@@ -168,9 +168,9 @@ nodemon -e ts --exec ts-node -r tsconfig-paths/register --files ./index.ts
 
 ## [volta](https://volta.sh/)
 
-`volta install node`安装最新node
-`volta pin node@xx`指定项目node版本（根据项目自动切换）
-添加系统环境变量`VOLTA_FEATURE_PNPM`等于`1`启用pnpm
+  `volta install node`安装最新node
+  `volta pin node@xx`指定项目node版本（根据项目自动切换）
+  添加系统环境变量`VOLTA_FEATURE_PNPM`等于`1`启用pnpm
 
 ## [bun](https://bun.sh/)
 Bun被设计为Node.js的直接替代品。
