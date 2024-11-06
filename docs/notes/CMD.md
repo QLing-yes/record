@@ -162,17 +162,17 @@ nodemon -e ts --exec ts-node -r tsconfig-paths/register --files ./index.ts
 - `-e`：表示指定观察列表 (Specifying extension watch list)
 - `--exec`：代表命令行形式执行命令
 
-# nvm （建议使用volta）
+## nvm （建议使用volta）
 
 [node版本管理工具](https://cloud.tencent.com/developer/article/1409081)
 
-# [volta](https://volta.sh/)
+## [volta](https://volta.sh/)
 
 `volta install node`安装最新node
 `volta pin node@xx`指定项目node版本（根据项目自动切换）
 添加系统环境变量`VOLTA_FEATURE_PNPM`等于`1`启用pnpm
 
-# [bun](https://bun.sh/)
+## [bun](https://bun.sh/)
 Bun被设计为Node.js的直接替代品。
 下载依赖真的超级快（是yarn的30倍）！！！
 项目启动速度也是快。
