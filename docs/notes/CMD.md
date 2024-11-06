@@ -1,22 +1,11 @@
-# cmd
-
-- 创建一个文件夹 `md 目录名`
-- cd
--   删除一个文件夹 `rmdir /s/q  目录名`
-- 列出当前目录下的所有文件 `dir`
-
-# windows 环境变量
-
-可以将一些常用的文件或程序的路径添加到path下,这样我们就可以在任意位置来访问这些文件了。
-
-# 常用Git命令
+## 常用Git命令
 
 <img src="../image/image-20220525000703167.png" alt="image-20220525000703167"  />
 
 - [GitHub Doc](https://docs.github.com/cn/get-started/using-git/pushing-commits-to-a-remote-repository)
 
 
-[操作](https://docs.github.com/cn/get-started/using-git/pushing-commits-to-a-remote-repository)
+### [操作](https://docs.github.com/cn/get-started/using-git/pushing-commits-to-a-remote-repository)
 
 - `git fetch` - **仅查看远程变动**
   1. `--all` - 拉取覆盖本地
@@ -48,17 +37,17 @@
 
   1. `-f` 
 
-- [回滚](https://zhuanlan.zhihu.com/p/137856034)
+### [回滚](https://zhuanlan.zhihu.com/p/137856034)
 
   1. `git reset --hard HEAD^` - 上一个版本
 
-推送流程
+### 推送流程
 
 git add -A
 git commit -m ""
 git push -u origin main
 
-[仓库管理](https://docs.github.com/cn/get-started/getting-started-with-git/managing-remote-repositories)
+### [仓库管理](https://docs.github.com/cn/get-started/getting-started-with-git/managing-remote-repositories)
 
 - `git init` - 初始化
 - `git clone [REPO URL]` - 克隆
@@ -71,19 +60,19 @@ git push -u origin main
   2. `add [any_remote_name] [REPO URL]` - 关联远程仓库
   3. `rm [name]` - 取消关联仓库
 
-配置
+### 配置
 
 - `git config --global --list` - 全局配置信息
 - `git config [any]`
 
-SSH
+### SSH
 
 - `ssh-keygen -t rsa` - 生成
 - `ssh -T git@github.com` - 在github验证是否存在
 - `ssh -T -p 443 git@ssh.github.com`
 - `ll -d ~/.ssh` - 查看ssh路径
 
-.gitignore
+### .gitignore
 
 - `touch .gitignore` 
 - `git status`
@@ -97,7 +86,7 @@ css/*.css       //忽略css目录下的.css文件
 
 
 
-# [npm](https://segmentfault.com/a/1190000012099112)
+## [npm](https://segmentfault.com/a/1190000012099112)
 
 - 删除依赖 `uninstall`
 - 初始化 `init`
@@ -113,21 +102,20 @@ css/*.css       //忽略css目录下的.css文件
 
 > 镜像
 
-- [官方](https://registry.npmjs.org/)
-- [阿里镜像站](https://developer.aliyun.com/mirror/?spm=a2c6h.13651102.0.0.5bbc1b11Doi1G6&serviceType=mirror&tag=%E8%AF%AD%E8%A8%80)
-npm config set registry https://registry.npmmirror.com
-npm config set registry https://registry.npmjs.org
+- [官方](https://registry.npmjs.org/) npm config set registry https://registry.npmjs.org
+- [阿里镜像站](https://developer.aliyun.com/mirror/?spm=a2c6h.13651102.0.0.5bbc1b11Doi1G6&serviceType=mirror&tag=%E8%AF%AD%E8%A8%80) npm config set registry https://registry.npmmirror.com
+- [npmmirror] npm config set registry https://registry.npmmirror.com
 
 
 ## package.json
 
 
 
-# node
+## node
 
 - 安装类型定义`npm i --save-dev @types/node`
 
-### [devtool调试](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+## [devtool调试](https://nodejs.org/en/docs/guides/debugging-getting-started/)
 
 - node --inspect ts-node/register src/index.ts
 
@@ -145,13 +133,13 @@ npm config set registry https://registry.npmjs.org
 
 -   安装electron `npm install electron --save-dev`
 
-# ts-node
+## ts-node
 
 - 依赖`npm i -g typescript`
 - 安装`npm install -g ts-node`
 - 安装类型定义`npm install -D tslib @types/node`
 
-#### [使用ESM构建](https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html)
+## [使用ESM构建](https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html)
 
 > package.json 中已添加 `"type": "module"`
 > tsconfig.json 中已添加 `"module": "ESNext"`
@@ -161,17 +149,7 @@ npm config set registry https://registry.npmjs.org
 > 安装 `npm i tsconfig-paths -g`
 > `ts-node -r tsconfig-paths/register index.ts --files`
 
-# ts-node-dev
-
-结合[node-dev](https://github.com/fgnass/node-dev)和[ts-node](https://github.com/TypeStrong/ts-node)的选项
-
-- `npm install -g ts-node-dev`
-
-```
-tsnd --respawn index.ts
-```
-
-# nodemon
+## nodemon
 
 - npm install -g nodemon
 
@@ -184,25 +162,17 @@ nodemon -e ts --exec ts-node -r tsconfig-paths/register --files ./index.ts
 - `-e`：表示指定观察列表 (Specifying extension watch list)
 - `--exec`：代表命令行形式执行命令
 
-# tsc
-
-- npm i -g typescript
-
-```
-tsc --init
-tsc -w
-```
-
-# Express
-
-# mongoose
-
-# sass
-
-`npm i sass`
-
-- sass --watch --style compressed ./src:./dist
-
-# nvm
+# nvm （建议使用volta）
 
 [node版本管理工具](https://cloud.tencent.com/developer/article/1409081)
+
+# [volta](https://volta.sh/)
+
+`volta install node`安装最新node
+`volta pin node@xx`指定项目node版本（根据项目自动切换）
+添加系统环境变量`VOLTA_FEATURE_PNPM`等于`1`启用pnpm
+
+# [bun](https://bun.sh/)
+Bun被设计为Node.js的直接替代品。
+下载依赖真的超级快（是yarn的30倍）！！！
+项目启动速度也是快。
